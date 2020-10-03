@@ -1,7 +1,7 @@
 # Hero Menu
 
-Hero Menu, es un menu de navegación responsivo de fácil personalización y con el HTML adecuado para darle los estilos pertinentes.
-Es totalmente adaptable a dispositivos mobiles, su funcionalidad se basa en Javascript pero median el CSS se puede alterar totalmente.
+Hero Menu, es un menú de navegación responsivo de fácil personalización y con el HTML adecuado para darle los estilos pertinentes.
+Es totalmente adaptable a dispositivos móviles, su funcionalidad se basa en JavaScript pero median el CSS se puede alterar totalmente.
 
 ## Empezando
 
@@ -19,7 +19,7 @@ Es totalmente adaptable a dispositivos mobiles, su funcionalidad se basa en Java
 <link href="./dist/css/skin-1.css" rel="stylesheet">
 ```
 
-2\. Escribe el HTML de tu menu, preferiblemente que sea la estructura recomendada.
+2\. Escribe el HTML de tu menú, preferiblemente que sea la estructura recomendada.
 ```html
 <nav id="hero-menu">
     <!--Logo-->
@@ -62,15 +62,15 @@ HeroMenu('#hero-menu');
 4\. (OPCIONAL) Opcionalmente puedes pasar un **Objeto** de configuración a la función **HeroMenu**.
 ```javascript
 HeroMenu('#hero-menu', {
-    breakpoint: 768,       // Delimita el tamaño mínimo de la pantalla para pasar a menu mobil
-    subContainer: 'ul',    // Es el contenedor que contiene las opciones del menu, este es el que se oculta en dispositivo mobil
-    contentAnchor: 'li',   // Es el contenedor de las anclas, de las opciones del menu
-    clickOutOnClose: true, // Indica si el menu se cerrara si usuario hace click afuera del menu. Si es falso, el usuario se ve obligado a clicker el botón para cerrar 
+    breakpoint: 768,       // Delimita el tamaño mínimo de la pantalla para pasar a menú móvil
+    subContainer: 'ul',    // Es el contenedor que contiene las opciones del menú, este es el que se oculta en dispositivo móvil
+    contentAnchor: 'li',   // Es el contenedor de las anclas, de las opciones del menú
+    clickOutOnClose: true, // Indica si el menú se cerrara si usuario hace clic afuera del menú. Si es falso, el usuario se ve obligado a clic en el botón para cerrar 
     dropdownContent: '<i class="hero-menu-dropdown-icon"></i>', // Contenido por defecto del indicador de dropdown
 });
 ```
 
-5\. **LISTO!** el menu empezara a funcionar, solo queda darle estilos CSS a tu menu.
+5\. **LISTO!** el menú empezara a funcionar, solo queda darle estilos CSS a tu menú.
 
 
 
@@ -80,15 +80,15 @@ A continuación conoce algunas de las configuraciones que puedan ayudarte en la 
 
 ### Delimitar el Breakpoint
 
-* Puedes configurar el tamaño mínimo que la pantalla debe tener para que el menu pase modo Mobile, dicho valor se expresa en **pixeles**, por defecto se tienen 768px.
-* Internamente lo que hace el *Script* es alternar entre una clase ".mobile" en el contenedor padre del Hero Menu facilitando su personalización a travez de *CSS*
-* Si deseas que tu menu siempre requiera ser desplegado, puede configurar un **Breakpoint** muy alto, y el *Script* nunca alternara la clase css ".mobile"
+* Puedes configurar el tamaño mínimo que la pantalla debe tener para que el menú pase modo Mobile, dicho valor se expresa en **pixeles**, por defecto se tienen 768px.
+* Internamente lo que hace el *Script* es alternar entre una clase ".mobile" en el contenedor padre del Hero Menú facilitando su personalización a través de *CSS*
+* Si deseas que tu menú siempre requiera ser desplegado, puede configurar un **Breakpoint** muy alto, y el *Script* nunca alternara la clase CSS ".mobile"
 ```javascript
 HeroMenu('#hero-menu', {
-    breakpoint: 99999,  // Configuracion para menu que rquieran siempre estar ocultos, y ser desplegados. 
+    breakpoint: 99999,  // Configuración para menú que requieran siempre estar ocultos, y ser desplegados. 
 });
 ```
-* Puedes hacer todo lo contrario y hacer que el menu nunca alterne la clase css ".mobile" y este siempre este visible
+* Puedes hacer todo lo contrario y hacer que el menú nunca alterne la clase CSS ".mobile" y este siempre este visible
 
 
 
@@ -120,8 +120,8 @@ Por defecto el sub-contenedor se establece como un "**ul**" y el contenedor de l
 Si se desea personalizar los elementos, hay que indicarle al *Script* mediante el objeto de configuración que **Tags HTML** deseamos:
 ```javascript
 HeroMenu('#hero-menu', {
-    subContainer: 'nav',  // Es el contenedor que contiene las opciones del menu, este es el que se oculta en dispositivo mobil
-    contentAnchor: 'div', // Es el contenedor de las anclas, de las opciones del menu
+    subContainer: 'nav',  // Es el contenedor que contiene las opciones del menú, este es el que se oculta en dispositivo móvil
+    contentAnchor: 'div', // Es el contenedor de las anclas, de las opciones del menú
 });
 ``` 
 Si hacemos esto, nuestro HTML debe concordar con la configuración que estamos pasando:
@@ -149,9 +149,9 @@ Si hacemos esto, nuestro HTML debe concordar con la configuración que estamos p
 Cualquier que sea la configuración es siempre **obligatorio** tener un **sub-contenedor** y un **contenedor de las anclas**.
 
 
-### Menu Mobile distinto al menu de escritorio
+### Menú Mobile distinto al menú de escritorio
 
-En algunas ocaciones es necesario tener un menu mobile con opciones y configuracion totalmente distintos al menu de escritorio, para esos casos se le puede indicar cual sera el menu de escritorio y cual el de mobile,
+En algunas ocasiones es necesario tener un menú Mobile con opciones y configuración totalmente distintos al menú de escritorio, para esos casos se le puede indicar cual será el menú de escritorio y cual el de Mobile,
 mediante los atributos ***data-hero='mobile'*** y ***data-hero='desktop'*** agregados al HTML:
 ```html
 <nav id="hero-menu">
@@ -194,18 +194,18 @@ mediante los atributos ***data-hero='mobile'*** y ***data-hero='desktop'*** agre
 ```
 
 
-### Indicar si el menu tiene cierre inteligente
+### Indicar si el menú tiene cierre inteligente
 
-Indica si el menu se cerrara si usuario hace click afuera del menu. Si es falso, el usuario se ve obligado a clicker el botón para cerrar. En algunas ocasiones deseamos que el usuario deba dar click al botón para cerrar el menu.
+Indica si el menú se cerrara si usuario hace clic afuera del menú. Si es falso, el usuario se ve obligado a clic en el botón para cerrar. En algunas ocasiones deseamos que el usuario deba dar clic al botón para cerrar el menú.
 ```javascript
 HeroMenu('#hero-menu', {
-    clickOutOnClose: false, // Indica si el menu se cerrara si usuario hace click afuera del menu. Si es falso, el usuario se ve obligado a clicker el botón para cerrar 
+    clickOutOnClose: false, // Indica si el menú se cerrara si usuario hace clic afuera del menú. Si es falso, el usuario se ve obligado a clic en el botón para cerrar 
 });
 ```
 
 ### Establece un HTML personalizado para el indicador de los Dropdowns
 
-Puedes establecer el contenido que tendrán los indicadores de los dropdowns, estos indican al usuario que es un desplegable, y también servirán de desplegar las opciones en el menu mobil
+Puedes establecer el contenido que tendrán los indicadores de los dropdowns, estos indican al usuario que es un desplegable, y también servirán de desplegar las opciones en el ***menú Móvil***
  ```javascript
  HeroMenu('#hero-menu', {
      dropdownContent: '<i class="fa fa-angle-down"></i>', // Contenido por defecto del indicador de dropdown
@@ -213,7 +213,7 @@ Puedes establecer el contenido que tendrán los indicadores de los dropdowns, es
  ```
 
 
-## Copyright
+## Copyright &copy;
 
-Este proyecto nace con la necesidad de dejar los menus automático hechos en jQuery, es **MIT**.
+Este proyecto nace con la necesidad de dejar los menús automático hechos en jQuery, es **MIT**. <br>
 Creado por: ***[Carmine Maggio](https://github.com/CarmineMM)*** 
