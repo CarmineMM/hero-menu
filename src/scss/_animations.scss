@@ -1,0 +1,115 @@
+/**
+    Fade and zoom
+ */
+%after {
+    display: inline-block;
+    vertical-align: .255rem;
+    margin-left: .2em;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+}
+
+/**
+ * Fade para el propio menu
+ */
+.hero-menu-container.mobile {
+    .hero-menu-sub-container {
+        right: 99999rem;
+        opacity: 0;
+        transition: opacity .3s linear, right 0s 100ms, transform .2s ease-in-out;
+        position: relative;
+        flex-direction: column;
+        height: 0;
+    }
+    &.open .hero-menu-sub-container {
+        right: 0;
+        opacity: 1;
+        transform: translateY(0);
+        height: 100%;
+    }
+}
+
+/**
+ * Fade para las anclas
+ */
+.hero-menu-content-anchor.hero-menu-animation-fade  {
+    & > a::after{
+        @extend %after
+    }
+
+    & > .hero-menu-dropdown{
+        right: 99999rem;
+        opacity: 0;
+        transition: opacity .3s linear, right 0s 100ms, transform .2s ease-in-out;
+        transform: translateY(0.6rem);
+    }
+    &.hero-menu-dropdown-open > .hero-menu-dropdown {
+        right: -10px;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    // Dropdowns anidados
+    .hero-menu-dropdown .hero-menu-dropdown{
+        top: 0;
+        right: -95%;
+    }
+}
+.hero-menu-container.mobile .hero-menu-content-anchor.hero-menu-animation-fade {
+    & > .hero-menu-dropdown{
+        height: 0;
+        left: 0;
+        z-index: -1;
+        position: relative;
+    }
+    &.hero-menu-dropdown-open > .hero-menu-dropdown {
+        height: 100%;
+        z-index: 1;
+    }
+    // Dropdowns anidados
+    .hero-menu-dropdown .hero-menu-dropdown{
+        display: block;
+        position: relative;
+        top: 0;
+    }
+}
+
+/**
+    Zoom
+ */
+.hero-menu-content-anchor.zoom {
+    & > a::after{
+        @extend %after
+    }
+    & > .hero-menu-dropdown{
+        transform: scale(0);
+        opacity: 0;
+        transition: opacity .2s ease-in-out, transform .15s ease;
+    }
+    &.hero-menu-dropdown-open > .hero-menu-dropdown {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .hero-menu-dropdown .hero-menu-dropdown{
+        top: 0;
+        right: -100%;
+    }
+}
+.hero-menu-container.mobile .hero-menu-content-anchor.zoom {
+    & > .hero-menu-dropdown{
+        height: 0;
+        position: relative;
+    }
+    &.hero-menu-dropdown-open > .hero-menu-dropdown {
+        height: 100%;
+    }
+    // Dropdowns anidados
+    .hero-menu-dropdown .hero-menu-dropdown{
+        display: block;
+        right: 0;
+    }
+}

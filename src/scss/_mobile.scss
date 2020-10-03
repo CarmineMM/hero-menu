@@ -1,0 +1,57 @@
+/**
+ * Botón responsive
+ */
+.hero-menu-button {
+    display: none;
+    outline: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    & > div {
+        min-height: 40px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    & > div > span {
+        transition: all .2s ease-in-out;
+        background: black;
+        width: 2.5rem;
+        height: 5px;
+        display: block;
+        margin-bottom: .3rem;
+        border-radius: 3px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+/**
+ * Contenedor del Botón responsive
+ */
+.hero-menu-container.mobile {
+    .hero-menu-button{
+        display: block;
+    }
+}
+
+
+/**
+ * Animación al los spans del Botón por defecto
+ */
+.hero-menu-container.mobile.open {
+    .hero-menu-button {
+        span:nth-child(1) {
+            transform: rotate(45deg) translate3d(7.1px, 7px, 0);
+        }
+        span:nth-child(3) {
+            transform: rotate(-45deg) translate3d(6.5px, -7px, 0);
+        }
+        span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+    }
+}

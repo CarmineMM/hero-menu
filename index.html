@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu responsivo</title>
+    <link rel="stylesheet" href="dist/css/hero-menu.css">
+    <script src="dist/js/hero-menu.js"></script>
+
+
+    <link rel="stylesheet" href="src/css/style.css">
+    <script src="src/js/script.js"></script>
+</head>
+<body>
+    <nav id="hero-menu" class="hero-menu-opacity">
+        <a href="#!">Logo</a>
+        <button data-hero="button">
+            <div>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <ul>
+            <li><a href="google.com">Home</a></li>
+            <li><a href="#!">Nosotros</a></li>
+            <li>
+                <a href="#!">Productos</a>
+                <ul>
+                    <li><a href="#!">Prouducto 1</a></li>
+                    <li><a href="#!">Prouducto 2</a></li>
+                    <li>
+                        <a href="#!">Prouducto 3</a>
+                        <ul>
+                            <li><a href="#!">Producto 3.1</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#!">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <h1>Menu</h1>
+    <p style="margin-bottom: 2rem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias animi aspernatur atque cum dignissimos error ex,
+        facere harum iste itaque maiores, perspiciatis quae repudiandae similique temporibus tenetur totam ut vitae.</p>
+
+    <div class="menu">
+        <p>quiero el boton aqui</p>
+    </div>
+
+    <script>
+        HeroMenu('#hero-menu')
+    </script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+/**
+ * Animation: Fade
+ * Skin: Menu básico promedio
+ * Author: Carmine Maggio
+ * Version: 1.0.5
+ */
+.hero-menu-container {
+    background-color: deeppink;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    flex-wrap: wrap;
+
+
+    /**
+     * Multiples menus: De escritorio y mobile
+     */
+    .hero-menu-sub-container[data-hero='mobile'] {
+        display: none;
+    }
+    .hero-menu-sub-container[data-hero='desktop'] {
+        display: flex;
+    }
+
+
+    /**
+     * Botón Responsivo
+     */
+    .hero-menu-button > div {
+        padding: 18px;
+        span {
+            background: white;
+        }
+    }
+
+
+    /**
+     * Contenedor de las Anclas
+     */
+    .hero-menu-content-anchor {
+        a {
+            display: block;
+            padding: 18px;
+            transition: .2s ease-in-out;
+            &:hover {
+                background-color: #f884bd;
+            }
+        }
+
+        &.hero-menu-dropdown-button > a > span::after{
+            display: inline-block;
+            vertical-align: 0.155rem;
+            margin-left: .3em;
+            content: "";
+            border-top: .3em solid;
+            border-right: .3em solid transparent;
+            border-bottom: 0;
+            border-left: .3em solid transparent;
+        }
+
+        & > .hero-menu-dropdown{
+            background-color: deeppink;
+            left: 9999rem;
+            opacity: 0;
+            transition: opacity .3s linear, right .1s 100ms, transform .2s ease-in-out;
+            transform: translateY(0.6rem);
+            width: 8.7rem;
+        }
+        &.hero-menu-dropdown-open > .hero-menu-dropdown {
+            left: 0;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        // Dropdowns anidados
+        .hero-menu-dropdown .hero-menu-dropdown{
+            top: 0;
+            left: -100%;
+        }
+    }
+
+
+    /**
+     * Clases a los Mobiles
+     */
+    &.mobile {
+        .hero-menu-sub-container[data-hero='desktop'] {
+            display: none;
+        }
+        .hero-menu-sub-container[data-hero='mobile'] {
+            display: flex;
+        }
+
+        /**
+         * Posición del menu
+         */
+        .hero-menu-sub-container {
+            right: 9999rem;
+            opacity: 0;
+            transition: opacity .3s linear, right .08s 100ms, transform .2s ease-in-out;
+            position: relative;
+            flex-direction: column;
+            height: 0;
+            width: 100%;
+            overflow: hidden;
+        }
+        // Animación del despliegue del menu
+        &.open .hero-menu-sub-container {
+            right: 0;
+            opacity: 1;
+            transform: translateY(0);
+            height: 100%;
+        }
+
+        /**
+         * Contenedor de las anclas en dispositivo mobil
+         */
+        .hero-menu-content-anchor {
+            &.hero-menu-dropdown-button > a > span{
+                margin-left: 10px;
+                padding: .1rem .8rem;
+                border: 1px solid rgba(200,200,200,.7);
+
+                &::after {
+                    margin-left: 0;
+                }
+            }
+
+            .hero-menu-dropdown{
+                width: 100%;
+            }
+            & > .hero-menu-dropdown{
+                height: 0;
+                left: 0;
+                z-index: -1;
+                position: relative;
+            }
+            &.hero-menu-dropdown-open > .hero-menu-dropdown {
+                height: 100%;
+                z-index: 1;
+            }
+            // Dropdowns anidados
+            .hero-menu-dropdown .hero-menu-dropdown{
+                display: block;
+                position: relative;
+                top: 0;
+            }
+        }
+    }
+}
