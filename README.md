@@ -166,7 +166,7 @@ mediante los atributos ***data-hero='mobile'*** y ***data-hero='desktop'*** agre
     </button>
 
     <!--Menu de Escritorio-->
-    <ul>
+    <ul data-hero="desktop">
         <li><a href="#!">Home</a></li>
         <li><a href="#!">Nosotros</a></li>
         <li>
@@ -185,7 +185,7 @@ mediante los atributos ***data-hero='mobile'*** y ***data-hero='desktop'*** agre
     </ul> 
 
     <!--Menu Mobil-->
-    <ul>
+    <ul data-hero="mobile">
         <li><a href="#!">Home</a></li>
         <li><a href="#!">Nosotros</a></li>
         <li><a href="#!">Productos</a></li>   
